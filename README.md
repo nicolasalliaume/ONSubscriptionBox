@@ -8,6 +8,11 @@ How to use it
 
 Simply add the shortcode '[on_subscription_box]' to any post or page content and the box will appear like magic.
 
+Dependencies
+-----------------
+Just jQuery.
+
+
 Customization
 -----------------
 
