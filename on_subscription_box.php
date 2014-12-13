@@ -92,6 +92,7 @@ if (!function_exists('on_subscription_box_get'))
 			    -moz-transition: all 200ms;
 			    -o-transition: all 200ms;
 			    transition: all 200ms;
+			    vertical-align: top;
 			}
 			.on_subscription_box button:hover {
 				background-color: #aaa;
@@ -104,6 +105,7 @@ if (!function_exists('on_subscription_box_get'))
 				height: 30px;
 				box-sizing: border-box;
 				border: 1px solid #ddd;
+				vertical-align: top;
 			}
 			.on_subscription_box .success,
 			.on_subscription_box .error {
