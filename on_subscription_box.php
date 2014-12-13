@@ -30,17 +30,19 @@ if (!function_exists('on_get_val')) {
 	}
 }
 
-function on_subscription_box_ajax() 
-{	
-	// send email
-	$subscriber = $_POST['subscriber'];
-	$admin_email = get_settings('admin_email');
-	$subject = $_POST['subject'];
-	
-	if (wp_mail( $admin_email, $subject, "New subscription from: " . $subscriber )) {
-		die (json_encode(array('success' => true)));
+if (!function_exists('on_subscription_box_ajax')) {
+	function on_subscription_box_ajax() 
+	{	
+		// send email
+		$subscriber = $_POST['subscriber'];
+		$admin_email = get_settings('admin_email');
+		$subject = $_POST['subject'];
+		
+		if (wp_mail( $admin_email, $subject, "New subscription from: " . $subscriber )) {
+			die (json_encode(array('success' => true)));
+		}
+		die (json_encode(array('success' => false)));
 	}
-	die (json_encode(array('success' => false)));
 }
 add_action( 'wp_ajax_on_subscription_box', 'on_subscription_box_ajax' );
 add_action( 'wp_ajax_nopriv_on_subscription_box', 'on_subscription_box_ajax' );
